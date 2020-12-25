@@ -1,15 +1,21 @@
-import SbEditable from 'storyblok-react'
+import SbEditable from 'storyblok-react';
 
-const FeaturedRecipes = ({blok}) => {
+import Recipe from './Recipe';
+
+const FeaturedRecipes = ({ blok }) => {
   return (
-    <ul>
-        {blok.recipes.map((recipe => (
-            <li data-uid={recipe.content._uid} key={recipe.content._uid}>
-                Recipe: { recipe.content.title } by { recipe.content.author }
-            </li>
-        )))}
+    <ul className="flex justify-end">
+      {blok.recipes.map((recipe) => (
+        <li
+          data-uid={recipe.content._uid}
+          key={recipe.content._uid}
+          className="flex-1"
+        >
+          <Recipe recipe={recipe.content} />
+        </li>
+      ))}
     </ul>
-  )
-}
+  );
+};
 
-export default FeaturedRecipes
+export default FeaturedRecipes;
