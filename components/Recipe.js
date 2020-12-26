@@ -21,7 +21,7 @@ function renderGood(document) {
     nodeResolvers: {
       [NODE_PARAGRAPH]: (children) => children,
       [NODE_UL]: (children) => (
-        <ul class="list-disc list-inside pl-2">{children}</ul>
+        <ul className="list-disc list-inside pl-2">{children}</ul>
       ),
     },
   });
@@ -49,8 +49,8 @@ const Recipe = ({ recipe }) => {
         {recipe.directions}
       </div>
 
-      <div class="pt-4 mt-4 flex text-gray-700 text-sm relative">
-        <div class="absolute bottom-0 right-0">May 6, 2020</div>
+      <div className="pt-4 mt-4 flex text-gray-700 text-sm relative">
+        <div className="absolute bottom-0 right-0">May 6, 2020</div>
         <div>Recipe by {recipe.author}</div>
       </div>
     </article>
