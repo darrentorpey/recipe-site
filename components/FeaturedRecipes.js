@@ -4,15 +4,18 @@ import Recipe from './Recipe';
 
 const FeaturedRecipes = ({ blok }) => {
   return (
-    <ul className="grid grid-cols-3">
+    <ul className="grid grid-cols-3 px-4 gap-4">
       {blok.recipes.map((recipe) => (
-        <li
-          data-uid={recipe.content._uid}
-          key={recipe.content._uid}
-          className=""
-        >
-          <Recipe recipe={recipe.content} />
-        </li>
+        recipe.content ?
+          (
+            <li
+              data-uid={recipe.content._uid}
+              key={recipe.content._uid}
+              className="max-w-sm"
+            >
+              <Recipe recipe={recipe.content} />
+            </li>
+          ) : null
       ))}
     </ul>
   );

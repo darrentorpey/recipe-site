@@ -46,7 +46,7 @@ const Recipe = ({ recipe }) => {
       <div className="">
         <h4 className="text-lg font-semibold">Directions:</h4>
 
-        {recipe.directions}
+        {renderGood(recipe.directions)}
       </div>
 
       <div className="pt-4 mt-4 flex text-gray-700 text-sm relative">
