@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   NODE_PARAGRAPH,
   NODE_UL,
@@ -28,8 +29,32 @@ function renderGood(document) {
 }
 
 const Recipe = ({ recipe }) => {
+  const [isFullScreen, setFullscreen] = React.useState(false);
+
+  async function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      const fullScreenElement = await document.documentElement.requestFullscreen();
+      console.log('Now fullscreen:', fullScreenElement);
+      setFullscreen(true);
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+      setFullscreen(false);
+    }
+  }
+
+  const toggleFullScreenForRecipe = () => {
+    toggleFullScreen();
+  };
+
   return (
-    <article className="p-6 m-2 rounded-lg shadow-sm max-w-lg bg-white	">
+    <article
+      data-fullscreen={ isFullScreen }
+      className={`p-6 m-2 rounded-lg shadow-sm max-w-lg bg-white
+        data-[fullscreen=true]:bg-green-100
+        w-wide
+      `}
+      onClick={ () => toggleFullScreenForRecipe() }
+    >
       <h3 className="text-2xl font-serif mb-4">{recipe.title}</h3>
 
       <img
