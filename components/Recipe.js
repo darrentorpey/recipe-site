@@ -49,8 +49,7 @@ const Recipe = ({ recipe }) => {
         {renderGood(recipe.directions)}
       </div>
 
-      <div className="pt-4 mt-4 flex text-gray-700 text-sm relative">
-        <div className="absolute bottom-0 right-0">May 6, 2020</div>
+      <div className="pt-4 mt-4 flex text-gray-700 text-sm relative sm:flex sm:flex-col">
         <div>Recipe by {recipe.author}</div>
       </div>
     </article>

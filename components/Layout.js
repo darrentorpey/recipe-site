@@ -7,11 +7,11 @@ const Layout = ({ children }) => (
   <div className="bg-gray-300">
     <Head />
 
-    <Navigation />
+    {/* <Navigation /> */}
 
     {children}
 
-    <Footer />
+    {/* <Footer /> */}
 
     {StoryblokService.bridge()}
   </div>
