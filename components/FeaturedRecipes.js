@@ -4,7 +4,7 @@ import Recipe from './Recipe';
 
 const FeaturedRecipes = ({ blok }) => {
   return (
-    <ul className="grid grid-cols-3 px-4 gap-4">
+    <ul className="flex flex-col flex-direction md:grid grid-cols-3 px-4 gap-4">
       {blok.recipes.map((recipe) => (
         recipe.content ?
           (
