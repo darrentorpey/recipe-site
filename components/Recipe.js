@@ -49,9 +49,17 @@ const Recipe = ({ recipe }) => {
   return (
     <article
       data-fullscreen={ isFullScreen }
-      className={`p-6 m-2 rounded-lg shadow-sm max-w-lg bg-white
-        data-[fullscreen=true]:bg-green-100
-        w-wide
+      className={`
+        p-6
+        m-2 rounded-lg shadow-sm max-w-lg bg-white
+        data-[fullscreen=true]:fixed
+        data-[fullscreen=true]:top-0
+        data-[fullscreen=true]:left-0
+        data-[fullscreen=true]:p-12
+        data-[fullscreen=true]:w-screen
+        data-[fullscreen=true]:h-screen
+        data-[fullscreen=true]:z-10
+        data-[fullscreen=true]:m-0
       `}
       onClick={ () => toggleFullScreenForRecipe() }
     >
