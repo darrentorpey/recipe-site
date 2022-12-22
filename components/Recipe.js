@@ -51,15 +51,18 @@ const Recipe = ({ recipe }) => {
       data-fullscreen={ isFullScreen }
       className={`
         p-6
-        m-2 rounded-lg shadow-sm max-w-lg bg-white
+        m-2 rounded-lg shadow-sm
+        bg-white
+        data-[fullscreen=false]:max-w-lg
         data-[fullscreen=true]:fixed
         data-[fullscreen=true]:top-0
         data-[fullscreen=true]:left-0
         data-[fullscreen=true]:p-12
-        data-[fullscreen=true]:w-screen
+        data-[fullscreen=true]:w-full
         data-[fullscreen=true]:h-screen
         data-[fullscreen=true]:z-10
         data-[fullscreen=true]:m-0
+        overflow-scroll
       `}
       onClick={ () => toggleFullScreenForRecipe() }
     >
@@ -67,7 +70,11 @@ const Recipe = ({ recipe }) => {
 
       <img
         src={resizeImage(recipe.hero_image, '300x400')}
-        className="mb-2 rounded-xl"
+        className="
+          mb-2
+          rounded-xl
+          w-full
+        "
       />
 
       <div className="py-5">
