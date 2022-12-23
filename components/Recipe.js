@@ -51,8 +51,10 @@ const Recipe = ({ recipe }) => {
       data-fullscreen={ isFullScreen }
       className={`
         p-6
-        m-2 rounded-lg shadow-sm
+        m-2
         bg-white
+        data-[fullscreen=false]:shadow-sm
+        data-[fullscreen=false]:rounded-lg
         data-[fullscreen=false]:max-w-lg
         data-[fullscreen=true]:fixed
         data-[fullscreen=true]:top-0
@@ -70,11 +72,7 @@ const Recipe = ({ recipe }) => {
 
       <img
         src={resizeImage(recipe.hero_image, '300x400')}
-        className="
-          mb-2
-          rounded-xl
-          w-full
-        "
+        className="mb-2 rounded-xl"
       />
 
       <div className="py-5">
